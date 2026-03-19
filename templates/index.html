@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Aragão | Tech & Gestão</title>
+    <meta name="description" content="Portfólio profissional de Jeremias Aragão unindo administração e tecnologia para resolver problemas reais.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="background-orb orb-1"></div>
+    <div class="background-orb orb-2"></div>
+
+    <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="#inicio" class="brand">
+                <span class="brand-badge">DA</span>
+                <div>
+                    <strong>Digital Aragão</strong>
+                    <small>Tech & Gestão</small>
+                </div>
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero section" id="inicio">
+            <div class="container hero-grid">
+                <div class="hero-content fade-up">
+                    <p class="eyebrow">PORTFÓLIO PROFISSIONAL + VITRINE DE SERVIÇOS</p>
+                    <h1>Administração e Tecnologia para resolver problemas reais</h1>
+                    <p class="hero-text">
+                        Eu ajudo empresas a organizarem processos, automatizarem tarefas e criarem soluções digitais
+                        com foco em eficiência, clareza operacional e resultado.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#contato">Falar no WhatsApp</a>
+                        <a class="btn btn-secondary" href="#projetos">Ver projetos</a>
+                    </div>
+
+                    <div class="hero-tags">
+                        <span>Automação</span>
+                        <span>Sistemas com Flask</span>
+                        <span>Integrações</span>
+                        <span>Gestão</span>
+                    </div>
+                </div>
+
+                <div class="hero-card fade-up delay-1">
+                    <div class="glass-card">
+                        <p class="card-label">Posicionamento</p>
+                        <h2>Especialista em soluções digitais para negócios</h2>
+                        <p>
+                            Mais do que criar sistemas, eu penso em rotina, processo, produtividade e impacto prático.
+                        </p>
+                        <div class="stats-grid">
+                            {% for stat in stats %}
+                            <div class="stat-item">
+                                <strong>{{ stat.number }}</strong>
+                                <span>{{ stat.label }}</span>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="sobre">
+            <div class="container section-grid about-grid">
+                <div class="section-heading fade-up">
+                    <p class="eyebrow">SOBRE MIM</p>
+                    <h2>Visão de negócio com execução prática</h2>
+                </div>
+                <div class="fade-up delay-1">
+                    <p>
+                        Sou um profissional que une <strong>Administração e Tecnologia</strong> para criar soluções
+                        aplicáveis ao dia a dia empresarial.
+                    </p>
+                    <p>
+                        Atuo com organização de processos, automação de tarefas, integrações e desenvolvimento de
+                        sistemas, sempre buscando melhorar eficiência, reduzir falhas e gerar resultado real.
+                    </p>
+                    <p>
+                        Minha proposta é simples: <strong>transformar problemas operacionais em soluções digitais inteligentes</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="servicos">
+            <div class="container">
+                <div class="section-heading center fade-up">
+                    <p class="eyebrow">SERVIÇOS</p>
+                    <h2>Soluções para empresas que querem crescer com organização e tecnologia</h2>
+                    <p>
+                        Trabalho com soluções práticas que ajudam a melhorar a rotina, o controle e a produtividade dos negócios.
+                    </p>
+                </div>
+
+                <div class="card-grid services-grid">
+                    {% for service in services %}
+                    <article class="info-card fade-up">
+                        <span class="service-icon">{{ service.icon }}</span>
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-highlight" id="diferencial">
+            <div class="container section-grid feature-grid">
+                <div class="fade-up">
+                    <p class="eyebrow">DIFERENCIAL</p>
+                    <h2>Mais que tecnologia: visão administrativa e foco em resultado</h2>
+                </div>
+                <div class="fade-up delay-1">
+                    <p>
+                        Diferente de perfis puramente técnicos, eu entendo o processo por trás da operação.
+                        Isso me permite propor soluções que não ficam bonitas só na tela, mas funcionam no mundo real.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Leitura prática do problema do negócio</li>
+                        <li>Foco em produtividade e organização</li>
+                        <li>Desenvolvimento orientado à aplicação real</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projetos">
+            <div class="container">
+                <div class="section-heading center fade-up">
+                    <p class="eyebrow">PROJETOS</p>
+                    <h2>Projetos que mostram solução, tecnologia e impacto</h2>
+                    <p>
+                        Cada projeto é pensado como prova de valor: problema, solução, tecnologias e resultado.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    {% for project in projects %}
+                    <article class="project-card fade-up">
+                        <div class="project-top">
+                            <span class="project-pill">Projeto</span>
+                            <h3>{{ project.title }}</h3>
+                        </div>
+                        <div class="project-content">
+                            <p><strong>Problema:</strong> {{ project.problem }}</p>
+                            <p><strong>Solução:</strong> {{ project.solution }}</p>
+                            <p><strong>Resultado:</strong> {{ project.result }}</p>
+                        </div>
+                        <div class="tag-list">
+                            {% for item in project.tech %}
+                            <span>{{ item }}</span>
+                            {% endfor %}
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="habilidades">
+            <div class="container">
+                <div class="section-heading center fade-up">
+                    <p class="eyebrow">HABILIDADES</p>
+                    <h2>Base técnica e visão estratégica</h2>
+                </div>
+                <div class="skills-wrap fade-up delay-1">
+                    {% for skill in skills %}
+                    <span class="skill-chip">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section" id="contato">
+            <div class="container cta-box fade-up">
+                <p class="eyebrow">CONTATO</p>
+                <h2>Vamos transformar uma necessidade do seu negócio em solução</h2>
+                <p>
+                    Se você quer organizar processos, automatizar tarefas ou desenvolver um sistema para a sua operação,
+                    esse portfólio é só o começo da conversa.
+                </p>
+                <div class="cta-actions">
+                    <a class="btn btn-primary" href="https://wa.me/5581994336238" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+                    <a class="btn btn-secondary" href="https://instagram.com/jeremias_" target="_blank" rel="noopener noreferrer">Ver Instagram</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div>
+                <strong>Digital Aragão | Tech & Gestão</strong>
+                <p>Administração e Tecnologia para resolver problemas reais.</p>
+            </div>
+            <p>© 2026 Jeremias Aragão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
